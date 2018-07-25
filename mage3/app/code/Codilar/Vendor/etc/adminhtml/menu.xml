@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_Vendor::vendor" title="Vendor" module="Codilar_Vendor" sortOrder="51" action="codilar_vendor/post" resource="Codilar_Vendor::helloworld"/>
+        <!--<add id="Codilar_Vendor::post" title="Manage Posts" module="Codilar_Vendor" sortOrder="10" action="mageplaza_helloworld/post" resource="Codilar_Vendor::post" parent="Codilar_Vendor::helloworld"/>-->
+        <!--<add id="Codilar_Vendor::hello_configuration" title="Configuration" module="Codilar_Vendor" sortOrder="99" parent="Codilar_Vendor::helloworld" action="adminhtml/system_config/edit/section/helloworld" resource="Codilar_Vendor::helloworld_configuration"/>-->
+    </menu>
+</config>
