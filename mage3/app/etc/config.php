@@ -4,7 +4,7 @@ return [
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Eav' => 1,
-        'Codilar_Vendor' => 1,
+        'Codilar_Vendor' => 0,
         'Magento_Backend' => 1,
         'Magento_Theme' => 1,
         'Magento_Customer' => 1,
@@ -126,6 +126,7 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Shopial_Facebook' => 1,
         'Temando_Shipping' => 1,
-        'Vertex_Tax' => 1
+        'Vertex_Tax' => 1,
+        'Webkul_Grid' => 1
     ]
 ];
