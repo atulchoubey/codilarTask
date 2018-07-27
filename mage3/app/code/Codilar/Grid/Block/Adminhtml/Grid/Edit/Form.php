@@ -55,13 +55,13 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         if ($model->getEntityId()) {
             $fieldset = $form->addFieldset(
                 'base_fieldset',
-                ['legend' => __('Edit Row Data'), 'class' => 'fieldset-wide']
+                ['legend' => __('Edit Vendor Data'), 'class' => 'fieldset-wide']
             );
             $fieldset->addField('entity_id', 'hidden', ['name' => 'entity_id']);
         } else {
             $fieldset = $form->addFieldset(
                 'base_fieldset',
-                ['legend' => __('Add Row Data'), 'class' => 'fieldset-wide']
+                ['legend' => __('Add Vendor Data'), 'class' => 'fieldset-wide']
             );
         }
 
@@ -78,43 +78,31 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
             ]
         );
 
-        $wysiwygConfig = $this->_wysiwygConfig->getConfig(['tab_id' => $this->getTabId()]);
-
         $fieldset->addField(
             'latitude',
-            'editor',
+            'text',
             [
                 'name' => 'latitude',
                 'label' => __('Latitude'),
-                'style' => 'height:36em;',
+                'id' => 'latitude',
+                'title' => __('Latitude'),
+                'class' => 'required-entry',
                 'required' => true,
-                'config' => $wysiwygConfig
             ]
         );
         $fieldset->addField(
             'longitude',
-            'editor',
+            'text',
             [
                 'name' => 'longitude',
                 'label' => __('Longitude'),
-                'style' => 'height:36em;',
+                'id' => 'longitude',
+                'title' => __('Longitude'),
+                'class' => 'required-entry',
                 'required' => true,
-                'config' => $wysiwygConfig
             ]
         );
-//        $fieldset->addField(
-//            'publish_date',
-//            'date',
-//            [
-//                'name' => 'publish_date',
-//                'label' => __('Publish Date'),
-//                'date_format' => $dateFormat,
-//                'time_format' => 'H:mm:ss',
-//                'class' => 'validate-date validate-date-range date-range-custom_theme-from',
-//                'class' => 'required-entry',
-//                'style' => 'width:200px',
-//            ]
-//        );
+
         $fieldset->addField(
             'is_active',
             'select',

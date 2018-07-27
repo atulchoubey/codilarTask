@@ -30,7 +30,7 @@ class Index extends \Magento\Backend\App\Action
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Codilar_Grid::grid_list');
-        $resultPage->getConfig()->getTitle()->prepend(__('Grid List'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Vendor List'));
         return $resultPage;
     }
 
