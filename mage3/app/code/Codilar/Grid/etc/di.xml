@@ -16,5 +16,8 @@
             </argument>
         </arguments>
     </type>
+    <preference for="Codilar\Grid\Api\VendorRepositoryInterface" type="Codilar\Grid\Model\VendorRepository" />
+    <preference for="Codilar\Grid\Api\Data\VendorInterface" type="Codilar\Grid\Model\Data\Vendor" />
+
 
 </config>
