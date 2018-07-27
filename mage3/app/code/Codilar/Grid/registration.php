@@ -9,6 +9,6 @@
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Webkul_Grid',
+    'Codilar_Grid',
     __DIR__
 );

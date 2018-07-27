@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-/**
- * Grid record list UI Component
- * @category  Webkul
- * @package   Webkul_Grid
- * @author    Webkul
- * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
- * @license   https://store.webkul.com/license.html
- */
--->
+
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -125,25 +116,25 @@
                </item>
            </argument>
        </selectionsColumn>
-       <column name="title">
+       <column name="vendor">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">textRange</item>
-                   <item name="label" xsi:type="string" translate="true">Title</item>
+                   <item name="label" xsi:type="string" translate="true">vendor</item>
                </item>
            </argument>
        </column>
-       <column name="content" >
+       <column name="latitude" >
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">false</item>
-                   <item name="label" xsi:type="string" translate="true">Content</item>
+                   <item name="label" xsi:type="string" translate="true">latitude</item>
                </item>
            </argument>
        </column>
        <column name="is_active" >
            <argument name="data" xsi:type="array">
-               <item name="options" xsi:type="object">Webkul\Grid\Model\Status</item>
+               <item name="options" xsi:type="object">Codilar\Grid\Model\Status</item>
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">select</item>
                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
@@ -152,38 +143,18 @@
                </item>
            </argument>
        </column>
-       <column name="publish_date" class="Magento\Ui\Component\Listing\Columns\Date" >
-           <argument name="data" xsi:type="array">
-               <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">dateRange</item>
-                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                   <item name="dataType" xsi:type="string">date</item>
-                   <item name="label" xsi:type="string" translate="true">Publish Date</item>
-               </item>
-           </argument>
-       </column>
-       <column name="update_time" class="Magento\Ui\Component\Listing\Columns\Date" >
-           <argument name="data" xsi:type="array">
-               <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">dateRange</item>
-                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                   <item name="dataType" xsi:type="string">date</item>
-                   <item name="label" xsi:type="string" translate="true">Update Time</item>
-               </item>
-           </argument>
-       </column>
-       <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" >
-           <argument name="data" xsi:type="array">
-               <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">dateRange</item>
-                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                   <item name="dataType" xsi:type="string">date</item>
-                   <item name="label" xsi:type="string" translate="true">Created At</item>
-               </item>
-           </argument>
-       </column>
+        <column name="longitude" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">false</item>
+                    <item name="label" xsi:type="string" translate="true">longitude</item>
+                </item>
+            </argument>
+        </column>
+
+
        <!-- Add Action with each row of grid and for this we will create a class Action -->
-       <actionsColumn name="actions" class="Webkul\Grid\Ui\Component\Listing\Grid\Column\Action">
+       <actionsColumn name="actions" class="Codilar\Grid\Ui\Component\Listing\Grid\Column\Action">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="resizeEnabled" xsi:type="boolean">false</item>

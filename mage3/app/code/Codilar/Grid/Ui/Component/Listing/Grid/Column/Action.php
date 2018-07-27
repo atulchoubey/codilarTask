@@ -1,13 +1,6 @@
 <?php
-/**
- * Grid Ui Component Action.
- * @category  Webkul
- * @package   Webkul_Grid
- * @author    Webkul
- * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
- * @license   https://store.webkul.com/license.html
- */
-namespace Webkul\Grid\Ui\Component\Listing\Grid\Column;
+
+namespace Codilar\Grid\Ui\Component\Listing\Grid\Column;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;

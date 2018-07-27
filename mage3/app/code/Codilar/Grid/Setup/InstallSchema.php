@@ -1,14 +1,7 @@
 <?php
-/**
- * Grid Schema Setup.
- * @category  Webkul
- * @package   Webkul_Grid
- * @author    Webkul
- * @copyright Copyright (c) 2010-2016 Webkul Software Private Limited (https://webkul.com)
- * @license   https://store.webkul.com/license.html
- */
 
-namespace Webkul\Grid\Setup;
+
+namespace Codilar\Grid\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -44,46 +37,31 @@ class InstallSchema implements InstallSchemaInterface
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             null,
             ['identity' => true, 'nullable' => false, 'primary' => true],
-            'Grid Record Id'
+            'Entity Id'
         )->addColumn(
-            'title',
+            'vendor',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
             255,
             ['nullable' => false],
-            'Title'
+            'Vendor'
         )->addColumn(
-            'content',
+            'latitude',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            '2M',
+            10,
             ['nullable' => false],
-            'Post'
+            'Latitude'
         )->addColumn(
-            'publish_date',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
-            null,
+            'longitude',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            10,
             [],
-            'Publish Date'
+            'Longitude'
         )->addColumn(
             'is_active',
             \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
             null,
             [],
             'Active Status'
-        )->addColumn(
-            'created_at',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
-            null,
-            [
-                'nullable' => false,
-                'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT,
-            ],
-            'Creation Time'
-        )->addColumn(
-            'update_time',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
-            null,
-            [],
-            'Modification Time'
         )->setComment(
             'Row Data Table'
         );

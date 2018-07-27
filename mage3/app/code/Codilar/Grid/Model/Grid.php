@@ -1,16 +1,9 @@
 <?php
 
-/**
- * Grid Grid Model.
- * @category  Webkul
- * @package   Webkul_Grid
- * @author    Webkul
- * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
- * @license   https://store.webkul.com/license.html
- */
-namespace Webkul\Grid\Model;
 
-use Webkul\Grid\Api\Data\GridInterface;
+namespace Codilar\Grid\Model;
+
+use Codilar\Grid\Api\Data\GridInterface;
 
 class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterface
 {
@@ -36,8 +29,9 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
      */
     protected function _construct()
     {
-        $this->_init('Webkul\Grid\Model\ResourceModel\Grid');
+        $this->_init('Codilar\Grid\Model\ResourceModel\Grid');
     }
+
     /**
      * Get EntityId.
      *
@@ -57,57 +51,57 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
     }
 
     /**
-     * Get Title.
+     * Get Vendor.
      *
      * @return varchar
      */
-    public function getTitle()
+    public function getVendor()
     {
-        return $this->getData(self::TITLE);
+        return $this->getData(self::VENDOR);
     }
 
     /**
-     * Set Title.
+     * Set Vendor.
      */
-    public function setTitle($title)
+    public function setVendor($vendor)
     {
-        return $this->setData(self::TITLE, $title);
+        return $this->setData(self::VENDOR, $vendor);
     }
 
     /**
-     * Get getContent.
+     * Get getLatitude.
      *
      * @return varchar
      */
-    public function getContent()
+    public function getLatitude()
     {
-        return $this->getData(self::CONTENT);
+        return $this->getData(self::LATITUDE);
     }
 
     /**
-     * Set Content.
+     * Set Latitude.
      */
-    public function setContent($content)
+    public function setLatitude($latitude)
     {
-        return $this->setData(self::CONTENT, $content);
+        return $this->setData(self::LATITUDE, $latitude);
     }
 
     /**
-     * Get PublishDate.
+     * Get Longitude.
      *
      * @return varchar
      */
-    public function getPublishDate()
+    public function getLongitude()
     {
-        return $this->getData(self::PUBLISH_DATE);
+        return $this->getData(self::LONGITUDE);
     }
 
     /**
-     * Set PublishDate.
+     * Set Longitude.
      */
-    public function setPublishDate($publishDate)
+    public function setLongitude($longitude)
     {
-        return $this->setData(self::PUBLISH_DATE, $publishDate);
+        return $this->setData(self::LONGITUDE, $longitude);
     }
 
     /**
@@ -128,39 +122,4 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
         return $this->setData(self::IS_ACTIVE, $isActive);
     }
 
-    /**
-     * Get UpdateTime.
-     *
-     * @return varchar
-     */
-    public function getUpdateTime()
-    {
-        return $this->getData(self::UPDATE_TIME);
-    }
-
-    /**
-     * Set UpdateTime.
-     */
-    public function setUpdateTime($updateTime)
-    {
-        return $this->setData(self::UPDATE_TIME, $updateTime);
-    }
-
-    /**
-     * Get CreatedAt.
-     *
-     * @return varchar
-     */
-    public function getCreatedAt()
-    {
-        return $this->getData(self::CREATED_AT);
-    }
-
-    /**
-     * Set CreatedAt.
-     */
-    public function setCreatedAt($createdAt)
-    {
-        return $this->setData(self::CREATED_AT, $createdAt);
-    }
 }

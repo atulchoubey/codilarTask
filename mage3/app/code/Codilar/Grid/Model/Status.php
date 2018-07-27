@@ -1,10 +1,6 @@
 <?php
-/**
- * Webkul_Grid Status Options Model.
- * @category    Webkul
- * @author      Webkul Software Private Limited
- */
-namespace Webkul\Grid\Model;
+
+namespace Codilar\Grid\Model;
 
 use Magento\Framework\Data\OptionSourceInterface;
 

@@ -1,12 +1,6 @@
 <?php
-/**
- * Webkul_Grid Add New Row Form Admin Block.
- * @category    Webkul
- * @package     Webkul_Grid
- * @author      Webkul Software Private Limited
- *
- */
-namespace Webkul\Grid\Block\Adminhtml\Grid\Edit;
+
+namespace Codilar\Grid\Block\Adminhtml\Grid\Edit;
 
 /**
  * Adminhtml Add New Row Form.
@@ -23,14 +17,14 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
      * @param \Magento\Framework\Registry $registry,
      * @param \Magento\Framework\Data\FormFactory $formFactory,
      * @param \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
-     * @param \Webkul\Grid\Model\Status $options,
+     * @param \Codilar\Grid\Model\Status $options,
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\Data\FormFactory $formFactory,
         \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
-        \Webkul\Grid\Model\Status $options,
+        \Codilar\Grid\Model\Status $options,
         array $data = []
     ) {
         $this->_options = $options;
@@ -72,13 +66,13 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         }
 
         $fieldset->addField(
-            'title',
+            'vendor',
             'text',
             [
-                'name' => 'title',
-                'label' => __('Title'),
-                'id' => 'title',
-                'title' => __('Title'),
+                'name' => 'vendor',
+                'label' => __('Vendor'),
+                'id' => 'vendor',
+                'title' => __('Vendor'),
                 'class' => 'required-entry',
                 'required' => true,
             ]
@@ -87,30 +81,40 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         $wysiwygConfig = $this->_wysiwygConfig->getConfig(['tab_id' => $this->getTabId()]);
 
         $fieldset->addField(
-            'content',
+            'latitude',
             'editor',
             [
-                'name' => 'content',
-                'label' => __('Content'),
+                'name' => 'latitude',
+                'label' => __('Latitude'),
                 'style' => 'height:36em;',
                 'required' => true,
                 'config' => $wysiwygConfig
             ]
         );
-
         $fieldset->addField(
-            'publish_date',
-            'date',
+            'longitude',
+            'editor',
             [
-                'name' => 'publish_date',
-                'label' => __('Publish Date'),
-                'date_format' => $dateFormat,
-                'time_format' => 'H:mm:ss',
-                'class' => 'validate-date validate-date-range date-range-custom_theme-from',
-                'class' => 'required-entry',
-                'style' => 'width:200px',
+                'name' => 'longitude',
+                'label' => __('Longitude'),
+                'style' => 'height:36em;',
+                'required' => true,
+                'config' => $wysiwygConfig
             ]
         );
+//        $fieldset->addField(
+//            'publish_date',
+//            'date',
+//            [
+//                'name' => 'publish_date',
+//                'label' => __('Publish Date'),
+//                'date_format' => $dateFormat,
+//                'time_format' => 'H:mm:ss',
+//                'class' => 'validate-date validate-date-range date-range-custom_theme-from',
+//                'class' => 'required-entry',
+//                'style' => 'width:200px',
+//            ]
+//        );
         $fieldset->addField(
             'is_active',
             'select',
