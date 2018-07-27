@@ -5,7 +5,7 @@ namespace Codilar\Grid\Controller\Adminhtml\Grid;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Backend\App\Action\Context;
 use Magento\Ui\Component\MassAction\Filter;
-use Codilar\Grid\Model\ResourceModel\Grid\Collection;
+use Codilar\Grid\Model\ResourceModel\Grid\CollectionFactory;
 
 class MassDelete extends \Magento\Backend\App\Action
 {

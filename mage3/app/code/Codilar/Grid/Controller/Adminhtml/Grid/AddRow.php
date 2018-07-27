@@ -52,7 +52,7 @@ class AddRow extends \Magento\Backend\App\Action
 
         $this->coreRegistry->register('row_data', $rowData);
         $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
-        $title = $rowId ? __('Edit Row Data ').$rowTitle : __('Add Row Data');
+        $title = $rowId ? __('Edit Vendor Data ').$rowTitle : __('Add Vendor Data');
         $resultPage->getConfig()->getTitle()->prepend($title);
         return $resultPage;
     }

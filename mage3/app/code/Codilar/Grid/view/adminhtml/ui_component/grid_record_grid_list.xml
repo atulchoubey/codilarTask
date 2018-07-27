@@ -10,7 +10,7 @@
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add New Row</item>
+                <item name="label" xsi:type="string" translate="true">Add New Vendor</item>
                 <item name="class" xsi:type="string">primary</item>
                 <item name="url" xsi:type="string">*/*/addrow</item>
             </item>
@@ -43,34 +43,7 @@
         </argument>
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
-        <filters name="listing_filters">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="columnsProvider" xsi:type="string">grid_record_grid_list.grid_record_grid_list.grid_records_columns</item>
-                    <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">grid_record_grid_list.grid_record_grid_list.listing_top.bookmarks</item>
-                        <item name="namespace" xsi:type="string">current.filters</item>
-                    </item>
-                    <item name="templates" xsi:type="array">
-                        <item name="filters" xsi:type="array">
-                            <item name="select" xsi:type="array">
-                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
-                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item name="childDefaults" xsi:type="array">
-                        <item name="provider" xsi:type="string">grid_record_grid_list.grid_record_grid_list.listing_top.listing_filters</item>
-                        <item name="imports" xsi:type="array">
-                            <item name="visible" xsi:type="string">grid_record_grid_list.grid_record_grid_list.grid_records_columns.${ $.index }:visible</item>
-                        </item>
-                    </item>
-                </item>
-                <item name="observers" xsi:type="array">
-                    <item name="column" xsi:type="string">column</item>
-                </item>
-            </argument>
-        </filters>
+
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -132,22 +105,23 @@
                </item>
            </argument>
        </column>
-       <column name="is_active" >
-           <argument name="data" xsi:type="array">
-               <item name="options" xsi:type="object">Codilar\Grid\Model\Status</item>
-               <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">select</item>
-                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
-                   <item name="dataType" xsi:type="string">select</item>
-                   <item name="label" xsi:type="string" translate="true">Is Active</item>
-               </item>
-           </argument>
-       </column>
+
         <column name="longitude" >
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">false</item>
                     <item name="label" xsi:type="string" translate="true">longitude</item>
+                </item>
+            </argument>
+        </column>
+        <column name="is_active" >
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Codilar\Grid\Model\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Is Active</item>
                 </item>
             </argument>
         </column>

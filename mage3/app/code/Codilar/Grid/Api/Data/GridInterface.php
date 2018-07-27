@@ -8,9 +8,9 @@ interface GridInterface
      * Constants for keys of data array. Identical to the name of the getter in snake case.
      */
     const ENTITY_ID = 'entity_id';
-    const TITLE = 'vendor';
-    const CONTENT = 'latitude';
-    const PUBLISH_DATE = 'longitude';
+    const VENDOR = 'vendor';
+    const LATITUDE = 'latitude';
+    const LONGITUDE = 'longitude';
     const IS_ACTIVE = 'is_active';
 
 
