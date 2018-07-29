@@ -43,6 +43,7 @@ interface VendorInterface
      * @return string
      */
     public function getLongitude();
+
     /**
      * @param string $longitude
      * @return $this
@@ -60,5 +61,5 @@ interface VendorInterface
      */
     public function setIsActive($isActive);
 
-  
+
 }

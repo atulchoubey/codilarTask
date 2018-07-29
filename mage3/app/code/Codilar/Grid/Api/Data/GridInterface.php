@@ -10,6 +10,7 @@ interface GridInterface
     const LATITUDE = 'latitude';
     const LONGITUDE = 'longitude';
     const IS_ACTIVE = 'is_active';
+
     /**
      * Get EntityId.
      *
