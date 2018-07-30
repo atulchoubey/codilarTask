@@ -6,5 +6,10 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
-
+    <route url="/V2/Vendor/getProducts" method="GET">
+        <service class="Codilar\Grid\Api\VendorRepositoryInterface" method="getProducts"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
 </routes>

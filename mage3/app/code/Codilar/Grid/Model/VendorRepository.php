@@ -10,9 +10,10 @@ namespace Codilar\Grid\Model;
 
 
 use Codilar\Grid\Api\Data\VendorInterface;
+use Codilar\Grid\Api\Data\ProductInterface;
 use Codilar\Grid\Api\VendorRepositoryInterface;
 use Codilar\Grid\Api\Data\VendorFactory;
-
+use Codilar\Grid\Api\Data\ProductFactory;
 
 class VendorRepository implements VendorRepositoryInterface
 {
@@ -22,17 +23,23 @@ class VendorRepository implements VendorRepositoryInterface
      * @return \Codilar\Grid\Model\Data\Vendor
      *
      */
-    protected $_poFactory;
+    protected $_postFactory;
     protected $vendorFactory;
+    protected $_productCollectionFactory;
+    protected $productFactory;
 
     public function __construct(
 
         \Codilar\Grid\Model\GridFactory $postFactory,
-        \Codilar\Grid\Model\Data\VendorFactory $vendorFactory
+        \Codilar\Grid\Model\Data\VendorFactory $vendorFactory,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
+        \Codilar\Grid\Model\Data\ProductFactory $productFactory
     )
     {
         $this->_postFactory = $postFactory;
-        $this->vendorFactory= $vendorFactory;
+        $this->vendorFactory = $vendorFactory;
+        $this->_productCollectionFactory = $productCollectionFactory;
+        $this->productFactory = $productFactory;
 
     }
 
@@ -44,27 +51,48 @@ class VendorRepository implements VendorRepositoryInterface
     public function getVendors()
     {
         $post = $this->_postFactory->create();
-        $collection =$post->getCollection();
-        $vendors=[];
-        foreach($collection as $item)
-        {
+        $collection = $post->getCollection();
+        $vendors = [];
+        foreach ($collection as $item) {
             $vendor = $this->vendorFactory->create();
             $vendor->setEntityId($item->getEntityId());
             $vendor->setVendor($item->getvendor());
             $vendor->setLatitude($item->getLatitude());
             $vendor->setLongitude($item->getLongitude());
-            $checkState=$item->getIsActive();
-            if($checkState==0)
-            {
+            $checkState = $item->getIsActive();
+            if ($checkState == 0) {
                 $vendor->setIsActive(false);
-            }
-            else
-            {
+            } else {
                 $vendor->setIsActive(true);
             }
             $vendors[] = $vendor;
         }
         return $vendors;
+
+    }
+
+
+    /**
+     * @param int $vendorId
+     * @return \Codilar\Grid\Api\Data\ProductInterface[]
+     */
+    public function getProducts($vendorId)
+    {
+        $collection = $this->_productCollectionFactory->create();
+        $collection->addAttributeToSelect(array('name', 'price', 'image'))
+            ->addAttributeToFilter('vendor_id',  array('eq' => $vendorId))
+            ->load();
+        $products=[];
+        foreach($collection as $item)
+        {
+            $product = $this->productFactory->create();
+            $product->setName($item->getName());
+            $product->setPrice($item->getPrice());
+            $product->setSmallImage($item->image());
+            $products[]=$product;
+
+        }
+        return $products;
 
     }
 }
