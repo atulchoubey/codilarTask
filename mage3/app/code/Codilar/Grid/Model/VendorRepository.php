@@ -5,16 +5,12 @@
  * Date: 26/7/18
  * Time: 4:36 PM
  */
-
 namespace Codilar\Grid\Model;
-
-
 use Codilar\Grid\Api\Data\VendorInterface;
 use Codilar\Grid\Api\Data\ProductInterface;
 use Codilar\Grid\Api\VendorRepositoryInterface;
 use Codilar\Grid\Api\Data\VendorFactory;
 use Codilar\Grid\Api\Data\ProductFactory;
-
 class VendorRepository implements VendorRepositoryInterface
 {
     /**
@@ -27,9 +23,7 @@ class VendorRepository implements VendorRepositoryInterface
     protected $vendorFactory;
     protected $_productCollectionFactory;
     protected $productFactory;
-
     public function __construct(
-
         \Codilar\Grid\Model\GridFactory $postFactory,
         \Codilar\Grid\Model\Data\VendorFactory $vendorFactory,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
@@ -40,9 +34,7 @@ class VendorRepository implements VendorRepositoryInterface
         $this->vendorFactory = $vendorFactory;
         $this->_productCollectionFactory = $productCollectionFactory;
         $this->productFactory = $productFactory;
-
     }
-
     /**
      * @param int $pageNumber
      * @return \Codilar\Grid\Api\Data\VendorInterface[]
@@ -51,11 +43,8 @@ class VendorRepository implements VendorRepositoryInterface
     {
         $post = $this->_postFactory->create();
         $collection = $post->getCollection();
-<<<<<<< HEAD
-=======
         $collection->setPageSize(2);
         $collection->setCurPage($pageNumber);
->>>>>>> c3e951fa00466c9a97e5c9ded1cd8adcad7d3359
         $vendors = [];
         foreach ($collection as $item) {
             $vendor = $this->vendorFactory->create();
@@ -72,10 +61,7 @@ class VendorRepository implements VendorRepositoryInterface
             $vendors[] = $vendor;
         }
         return $vendors;
-
     }
-
-
     /**
      * @param int $vendorId
      * @return \Codilar\Grid\Api\Data\ProductInterface[]
@@ -83,11 +69,7 @@ class VendorRepository implements VendorRepositoryInterface
     public function getProducts($vendorId)
     {
         $collection = $this->_productCollectionFactory->create();
-<<<<<<< HEAD
         $collection->addAttributeToSelect(array('name', 'price', 'image'))
-=======
-        $collection->addAttributeToSelect(array('name', 'price', 'smallImage'))
->>>>>>> c3e951fa00466c9a97e5c9ded1cd8adcad7d3359
             ->addAttributeToFilter('vendor_id',  array('eq' => $vendorId))
             ->load();
         $products=[];
@@ -96,15 +78,9 @@ class VendorRepository implements VendorRepositoryInterface
             $product = $this->productFactory->create();
             $product->setName($item->getName());
             $product->setPrice($item->getPrice());
-<<<<<<< HEAD
-            $product->setSmallImage($item->image());
-=======
-            $product->setSmallImage($item->getSmallImage());
->>>>>>> c3e951fa00466c9a97e5c9ded1cd8adcad7d3359
+            $product->setImage($item->getImage());
             $products[]=$product;
-
         }
         return $products;
-
     }
 }
