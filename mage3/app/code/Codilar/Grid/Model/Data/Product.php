@@ -1,13 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: jay
+ * User: manish
  * Date: 29/7/18
  * Time: 12:24 PM
  */
 
 namespace Codilar\Grid\Model\Data;
+
 use Codilar\Grid\Api\Data\ProductInterface;
+
 
 
 class Product implements ProductInterface
@@ -16,18 +18,18 @@ class Product implements ProductInterface
     /**
      * @return string
      */
-    public function getProductName()
+    public function getName()
     {
-        return $this->productname;
+        return $this->name;
     }
 
     /**
-     * @param string $productName
+     * @param string $name
      * @return $this
      */
-    public function setProductName($productName)
+    public function setName($name)
     {
-        $this->productname=$productName;
+        $this->name=$name;
         return $this;
     }
 
@@ -52,7 +54,7 @@ class Product implements ProductInterface
     /**
      * @return string
      */
-    public function getImage()
+    public function getSmallImage()
     {
         return $this->image;
     }
@@ -61,7 +63,7 @@ class Product implements ProductInterface
      * @param string $image
      * @return $this
      */
-    public function setImage($image)
+    public function setSmallImage($image)
     {
         $this->image=$image;
         return $this;

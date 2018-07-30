@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: jay
+ * User: manish
  * Date: 29/7/18
  * Time: 11:46 AM
  */
@@ -11,17 +11,16 @@ namespace Codilar\Grid\Api\Data;
 interface ProductInterface
 {
 
-
     /**
      * @return string
      */
-    public function getProductName();
+    public function getName();
 
     /**
-     * @param string $productName
+     * @param string $name
      * @return $this
      */
-    public function setProductName($productName);
+    public function setName($name);
 
     /**
      * @return int
@@ -37,11 +36,11 @@ interface ProductInterface
     /**
      * @return string
      */
-    public function getImage();
+    public function getSmallImage();
 
     /**
      * @param string $image
      * @return $this
      */
-    public function setImage($image);
+    public function setSmallImage($image);
 }
