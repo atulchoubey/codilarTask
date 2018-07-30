@@ -11,8 +11,17 @@ namespace Codilar\Grid\Api;
 interface VendorRepositoryInterface
 {
     /**
+     * @param int $pageNumber
      * @return \Codilar\Grid\Api\Data\VendorInterface[]
+     *
      */
-    public function getVendors();
+    public function getVendors($pageNumber);
+
+    /**
+     * Get Product Detail
+     * @param int $vendorId
+     * @return \Codilar\Grid\Api\Data\ProductInterface[]
+     */
+    public function getProducts($vendorId);
 
 }
