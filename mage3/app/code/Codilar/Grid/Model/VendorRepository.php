@@ -80,7 +80,7 @@ class VendorRepository implements VendorRepositoryInterface
     public function getProducts($vendorId)
     {
         $collection = $this->_productCollectionFactory->create();
-        $collection->addAttributeToSelect(array('name', 'price', 'smallImage'))
+        $collection->addAttributeToSelect(array('name', 'price', 'image'))
             ->addAttributeToFilter('vendor_id',  array('eq' => $vendorId))
             ->load();
         $products=[];
@@ -89,7 +89,7 @@ class VendorRepository implements VendorRepositoryInterface
             $product = $this->productFactory->create();
             $product->setName($item->getName());
             $product->setPrice($item->getPrice());
-            $product->setSmallImage($item->getSmallImage());
+            $product->setImage($item->getImage());
             $products[]=$product;
 
         }

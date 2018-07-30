@@ -54,7 +54,7 @@ class Product implements ProductInterface
     /**
      * @return string
      */
-    public function getSmallImage()
+    public function getImage()
     {
         return $this->image;
     }
@@ -63,7 +63,7 @@ class Product implements ProductInterface
      * @param string $image
      * @return $this
      */
-    public function setSmallImage($image)
+    public function setImage($image)
     {
         $this->image=$image;
         return $this;

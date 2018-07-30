@@ -36,11 +36,11 @@ interface ProductInterface
     /**
      * @return string
      */
-    public function getSmallImage();
+    public function getImage();
 
     /**
      * @param string $image
      * @return $this
      */
-    public function setSmallImage($image);
+    public function setImage($image);
 }
