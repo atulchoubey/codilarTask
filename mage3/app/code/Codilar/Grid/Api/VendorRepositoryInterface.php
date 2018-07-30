@@ -23,11 +23,4 @@ interface VendorRepositoryInterface
      */
     public function getProducts($vendorId);
 
-    /**
-     * Get Product Detail
-     * @param int $vendorId
-     * @return \Codilar\Grid\Api\Data\ProductInterface[]
-     */
-    public function getProducts($vendorId);
-
 }
