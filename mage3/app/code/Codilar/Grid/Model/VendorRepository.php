@@ -44,14 +44,18 @@ class VendorRepository implements VendorRepositoryInterface
     }
 
     /**
+     * @param int $pageNumber
      * @return \Codilar\Grid\Api\Data\VendorInterface[]
      */
-
-
-    public function getVendors()
+    public function getVendors($pageNumber)
     {
         $post = $this->_postFactory->create();
         $collection = $post->getCollection();
+<<<<<<< HEAD
+=======
+        $collection->setPageSize(2);
+        $collection->setCurPage($pageNumber);
+>>>>>>> c3e951fa00466c9a97e5c9ded1cd8adcad7d3359
         $vendors = [];
         foreach ($collection as $item) {
             $vendor = $this->vendorFactory->create();
@@ -79,7 +83,11 @@ class VendorRepository implements VendorRepositoryInterface
     public function getProducts($vendorId)
     {
         $collection = $this->_productCollectionFactory->create();
+<<<<<<< HEAD
         $collection->addAttributeToSelect(array('name', 'price', 'image'))
+=======
+        $collection->addAttributeToSelect(array('name', 'price', 'smallImage'))
+>>>>>>> c3e951fa00466c9a97e5c9ded1cd8adcad7d3359
             ->addAttributeToFilter('vendor_id',  array('eq' => $vendorId))
             ->load();
         $products=[];
@@ -88,7 +96,11 @@ class VendorRepository implements VendorRepositoryInterface
             $product = $this->productFactory->create();
             $product->setName($item->getName());
             $product->setPrice($item->getPrice());
+<<<<<<< HEAD
             $product->setSmallImage($item->image());
+=======
+            $product->setSmallImage($item->getSmallImage());
+>>>>>>> c3e951fa00466c9a97e5c9ded1cd8adcad7d3359
             $products[]=$product;
 
         }
