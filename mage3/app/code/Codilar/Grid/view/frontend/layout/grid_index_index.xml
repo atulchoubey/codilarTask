@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Codilar_Grid::css/style.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Codilar\Grid\Block\Hello" name="grid" template="Codilar_Grid::hello.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                            <item name="components" xsi:type="array">
+                                <item name="vendor-list" xsi:type="array">
+                                    <item name="component" xsi:type="string">Codilar_Grid/js/view/vendorView</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">Codilar_Grid/view/vendors</item>
+                                    </item>
+                                </item>
+                            </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

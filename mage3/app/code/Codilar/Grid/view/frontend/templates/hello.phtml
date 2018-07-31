@@ -1,0 +1,13 @@
+<?php
+/** @var \Codilar\Grid\Block\Hello $block */
+?>
+<div id="vendor_container" data-bind="scope: 'vendor-list'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+{
+    "#vendor_container":{
+        "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+    }
+}
+</script>
