@@ -36,6 +36,7 @@ class VendorRepository implements VendorRepositoryInterface
         $this->productFactory = $productFactory;
     }
     /**
+     * @param int $pageNumber
      * @return \Codilar\Grid\Api\Data\VendorInterface[]
      */
     public function getVendors()
@@ -55,7 +56,9 @@ class VendorRepository implements VendorRepositoryInterface
             } else {
                 $vendor->setIsActive(true);
             }
-            $vendors[] = $vendor;
+            if($checkState == 1){
+                $vendors[] = $vendor;
+            }
         }
         return $vendors;
     }
