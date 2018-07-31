@@ -36,13 +36,16 @@ class VendorRepository implements VendorRepositoryInterface
         $this->productFactory = $productFactory;
     }
     /**
+     * @param int $pageSize
      * @param int $pageNumber
      * @return \Codilar\Grid\Api\Data\VendorInterface[]
      */
-    public function getVendors()
+    public function getVendors($pageSize,$pageNumber)
     {
         $post = $this->_postFactory->create();
         $collection = $post->getCollection();
+        $collection->setPageSize($pageSize);
+        $collection->setCurPage($pageNumber);
         $vendors = [];
         foreach ($collection as $item) {
             $vendor = $this->vendorFactory->create();
