@@ -1,0 +1,12 @@
+<input class="search" placeholder="Search" data-bind="textInput: vendorName" />
+<!-- ko if: fetchVendors()().length == 0-->
+<div>No Vendors available</div>
+<!--/ko-->
+<div class="vedor-wrapper">
+    <!-- ko foreach: {data: fetchVendors(), as: 'vend'}-->
+    <div class="vendor">
+        <h3 class="vendor-name" data-bind="text: vend.vendor"></h3>
+        <div class="vendor-image"></div>
+    </div>
+    <!--/ko-->
+</div>
