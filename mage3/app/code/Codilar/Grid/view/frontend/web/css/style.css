@@ -4,7 +4,7 @@
     transition: width 0.4s ease-in-out;
 }
 .search input[type=text]:focus {
-    width: 0%;
+    width: 100%;
 }
  .vendor{
         width: 100%;
@@ -15,7 +15,8 @@
         width: 20%;
         float: left;
     }
-    .vendor-img{
+    .vendor-image{
+        background: grey;
         float: right;
         width: 70%;
         height: 200px;
