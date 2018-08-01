@@ -8,14 +8,25 @@
             <block class="Codilar\Grid\Block\Hello" name="grid" template="Codilar_Grid::hello.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
-                            <item name="components" xsi:type="array">
-                                <item name="vendor-list" xsi:type="array">
-                                    <item name="component" xsi:type="string">Codilar_Grid/js/view/vendorView</item>
-                                    <item name="config" xsi:type="array">
-                                        <item name="template" xsi:type="string">Codilar_Grid/view/vendors</item>
+                        <item name="components" xsi:type="array">
+                            <item name="Codilar_Task" xsi:type="array">
+                                <item name="component" xsi:type="string">uiComponent</item>
+                                <item name="children" xsi:type="array">
+                                    <item name="vendor-list" xsi:type="array">
+                                        <item name="component" xsi:type="string">Codilar_Grid/js/view/vendorView</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="template" xsi:type="string">Codilar_Grid/view/vendors</item>
+                                        </item>
+                                    </item>
+                                    <item name="product-list" xsi:type="array">
+                                        <item name="component" xsi:type="string">Codilar_Grid/js/view/productView</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="template" xsi:type="string">Codilar_Grid/view/products</item>
+                                        </item>
                                     </item>
                                 </item>
                             </item>
+                        </item>
                     </argument>
                 </arguments>
             </block>
