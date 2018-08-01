@@ -17,11 +17,4 @@ interface VendorRepositoryInterface
      */
     public function getVendors($pageSize,$pageNumber);
 
-    /**
-     * Get Product Detail
-     * @param int $vendorId
-     * @return \Codilar\Grid\Api\Data\ProductInterface[]
-     */
-    public function getProducts($vendorId);
-
 }

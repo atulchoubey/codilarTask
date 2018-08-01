@@ -18,6 +18,9 @@
     </type>
     <preference for="Codilar\Grid\Api\VendorRepositoryInterface" type="Codilar\Grid\Model\VendorRepository" />
     <preference for="Codilar\Grid\Api\Data\VendorInterface" type="Codilar\Grid\Model\Data\Vendor" />
-
+    <preference for="Codilar\Grid\Api\ProductRepositoryInterface" type="Codilar\Grid\Model\ProductRepository" />
+    <preference for="Codilar\Grid\Api\Data\ProductInterface" type="Codilar\Grid\Model\Data\Product" />
+    <preference for="Codilar\Grid\Api\Data\ProductOptionInterface" type="Codilar\Grid\Model\Data\ProductOption" />
+    <preference for="Codilar\Grid\Api\Data\ProductConfigurationInterface" type="Codilar\Grid\Model\Data\ProductConfiguration" />
 
 </config>
