@@ -1,23 +1,23 @@
-.search input[type=text] {
-    width: 150px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+.vendor {
+  width: 100%;
+  float: left;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  background: gainsboro;
 }
-.search input[type=text]:focus {
-    width: 100%;
+.vendor:hover{
+    box-shadow: 2px 2px 2px grey;
 }
- .vendor{
-        width: 100%;
-        float: left;
-        padding: 10px;
-    }
-    .vendor-name{
-        width: 20%;
-        float: left;
-    }
-    .vendor-image{
-        background: grey;
-        float: right;
-        width: 70%;
-        height: 200px;
-    }
+.vendor-name {
+  width: 20%;
+ 
+  float: left;
+  text-align: center;
+}
+.vendor-image {
+  background: grey;
+  float: right;
+  width: 70%;
+  height: 200px;
+}
