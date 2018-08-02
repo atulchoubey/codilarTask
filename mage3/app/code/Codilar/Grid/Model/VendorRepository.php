@@ -13,27 +13,22 @@ use Codilar\Grid\Api\Data\VendorFactory;
 use Codilar\Grid\Api\Data\ProductFactory;
 class VendorRepository implements VendorRepositoryInterface
 {
-    /**
-     * @var GridFactory
-     * @var Vendor $result
-     * @return \Codilar\Grid\Model\Data\Vendor
-     *
-     */
+
     protected $_postFactory;
     protected $vendorFactory;
-    protected $_productCollectionFactory;
-    protected $productFactory;
+
+    /**
+     * VendorRepository constructor.
+     * @param GridFactory $postFactory
+     * @param Data\VendorFactory $vendorFactory
+     */
     public function __construct(
         \Codilar\Grid\Model\GridFactory $postFactory,
-        \Codilar\Grid\Model\Data\VendorFactory $vendorFactory,
-        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
-        \Codilar\Grid\Model\Data\ProductFactory $productFactory
+        \Codilar\Grid\Model\Data\VendorFactory $vendorFactory
     )
     {
         $this->_postFactory = $postFactory;
         $this->vendorFactory = $vendorFactory;
-        $this->_productCollectionFactory = $productCollectionFactory;
-        $this->productFactory = $productFactory;
     }
     /**
      * @param int $pageSize
@@ -43,10 +38,10 @@ class VendorRepository implements VendorRepositoryInterface
     public function getVendors($pageSize,$pageNumber)
     {
         $post = $this->_postFactory->create();
+        $vendors = [];
         $collection = $post->getCollection();
         $collection->setPageSize($pageSize);
         $collection->setCurPage($pageNumber);
-        $vendors = [];
         foreach ($collection as $item) {
             $vendor = $this->vendorFactory->create();
             $vendor->setEntityId($item->getEntityId());
@@ -65,25 +60,18 @@ class VendorRepository implements VendorRepositoryInterface
         }
         return $vendors;
     }
+
     /**
-     * @param int $vendorId
-     * @return \Codilar\Grid\Api\Data\ProductInterface[]
+     * @param int $pageSize
+     * @return int
      */
-    public function getProducts($vendorId)
+    public function getTotalPages($pageSize)
     {
-        $collection = $this->_productCollectionFactory->create();
-        $collection->addAttributeToSelect(array('name', 'price', 'image'))
-            ->addAttributeToFilter('vendor_id',  array('eq' => $vendorId))
-            ->load();
-        $products=[];
-        foreach($collection as $item)
-        {
-            $product = $this->productFactory->create();
-            $product->setName($item->getName());
-            $product->setPrice($item->getPrice());
-            $product->setImage($item->getImage());
-            $products[]=$product;
-        }
-        return $products;
+        $post = $this->_postFactory->create();
+        $collection = $post->getCollection();
+        $count = $collection->count();
+        return ceil($count/$pageSize);
     }
+
 }
+
