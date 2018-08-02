@@ -38,10 +38,10 @@ class VendorRepository implements VendorRepositoryInterface
     public function getVendors($pageSize,$pageNumber)
     {
         $post = $this->_postFactory->create();
+        $vendors = [];
         $collection = $post->getCollection();
         $collection->setPageSize($pageSize);
         $collection->setCurPage($pageNumber);
-        $vendors = [];
         foreach ($collection as $item) {
             $vendor = $this->vendorFactory->create();
             $vendor->setEntityId($item->getEntityId());
@@ -59,6 +59,18 @@ class VendorRepository implements VendorRepositoryInterface
             }
         }
         return $vendors;
+    }
+
+    /**
+     * @param int $pageSize
+     * @return int
+     */
+    public function getTotalPages($pageSize)
+    {
+        $post = $this->_postFactory->create();
+        $collection = $post->getCollection();
+        $count = $collection->count();
+        return ceil($count/$pageSize);
     }
 
 }

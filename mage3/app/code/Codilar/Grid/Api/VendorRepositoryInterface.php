@@ -17,4 +17,9 @@ interface VendorRepositoryInterface
      */
     public function getVendors($pageSize,$pageNumber);
 
+    /**
+     * @param int $pageSize
+     * @return int
+     */
+    public function getTotalPages($pageSize);
 }
