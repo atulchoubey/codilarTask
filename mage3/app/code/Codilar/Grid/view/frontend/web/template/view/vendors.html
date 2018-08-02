@@ -1,14 +1,19 @@
 <div class="vendor-section" data-bind="visible: isVisible()">
-    <input placeholder="enter vendor name" data-bind="textInput: vendorName" />
-    <!-- ko if: fetchVendors()().length == 0-->
-    <div>No vendors</div>
-    <!--/ko-->
-    <div class="vendor-wrapper">
-        <!-- ko foreach: {data: fetchVendors(), as: 'vend'}-->
-        <div class="vendor">
-            <h3 class="vendor-name" data-bind="text: vend.vendor, click: $parent.getVendorProducts" ></h3>
-            <div class="vendor-image"></div>
-        </div>
+        <input id="searchV" type="text" value="" placeholder="Search here..." class="input-text" data-bind="textInput:  vendorName">
+        <!-- ko if: fetchVendors()().length == 0-->
+        <div>No vendors</div>
         <!--/ko-->
+        <div class="vendor-wrapper">
+            <!-- ko foreach: {data: fetchVendors(), as: 'vend'}-->
+            <div class="vendor">
+                <h3 class="vendor-name" data-bind="text: vend.vendor, click: $parent.getVendorProducts"></h3>
+                <div class="vendor-image"></div>
+            </div>
+            <!--/ko-->
+        </div>
+        <div class="pager">
+            <a href="#" class="previous" data-bind="click: previous, visible: hasPrev">prev</a>
+            <span class="current" data-bind="text: pageNumber"></span>
+            <a href="#" class="next" data-bind="click: next, visible: hasNext">next</a>
+        </div>
     </div>
-</div>

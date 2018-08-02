@@ -1,4 +1,15 @@
 <div data-bind="visible: isVisible()">
-<h2 data-bind="click: goBack" >BACK</h2>
-<h3>THIS IS PRODUCT</h3>
-</div>
+        <h2 data-bind="click: goBack">BACK</h2>
+        <!-- ko if: fetchProducts()().length == 0-->
+        <div>No products available from this vendor</div>
+        <!--/ko-->
+        <div class="vendor-wrapper">
+            <h2>Products from <span data-bind="text: vName()"></span></h2>
+            <!-- ko foreach: {data: fetchProducts(), as: 'product'}-->
+            <div class="vendor">
+                <h3 class="vendor-name" data-bind="text: product.name"></h3>
+                <div class="vendor-image"></div>
+            </div>
+            <!--/ko-->
+        </div>
+    </div>

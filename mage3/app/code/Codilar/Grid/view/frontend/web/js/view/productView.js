@@ -3,7 +3,7 @@ define([
     'ko',
     'Codilar_Grid/js/model/productModel',
     'Codilar_Grid/js/model/stepNavigator'
-], function(Component, ko, vendorModel, stepNavigator) {
+], function(Component, ko, productModel, stepNavigator) {
     'use strict';
 
     var status = function() {
@@ -23,7 +23,14 @@ define([
         },
         goBack: function(){
             stepNavigator.setCurrentStep("vendor");
-        }
+        },
+        vName: function(){
+            return productModel.getName();
+        },
+        fetchProducts: function(){
+            return productModel.getProducts();
+        },
+
     })
     
 });
