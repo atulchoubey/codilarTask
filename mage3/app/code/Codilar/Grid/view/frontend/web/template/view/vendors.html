@@ -1,5 +1,5 @@
 <div class="vendor-section" data-bind="visible: isVisible()">
-        <input id="searchV" type="text" value="" placeholder="Search here..." class="input-text" data-bind="textInput:  vendorName">
+        <input placeholder="enter vendor name" data-bind="textInput: vendorName" />
         <!-- ko if: fetchVendors()().length == 0-->
         <div>No vendors</div>
         <!--/ko-->
@@ -12,8 +12,8 @@
             <!--/ko-->
         </div>
         <div class="pager">
-            <a href="#" class="previous" data-bind="click: previous, visible: hasPrev">prev</a>
+            <a href="#" class="previous" data-bind="click: previous">prev</a>
             <span class="current" data-bind="text: pageNumber"></span>
-            <a href="#" class="next" data-bind="click: next, visible: hasNext">next</a>
+            <a href="#" class="next" data-bind="click: next">next</a>
         </div>
     </div>

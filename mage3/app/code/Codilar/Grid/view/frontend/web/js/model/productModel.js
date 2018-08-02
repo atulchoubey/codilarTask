@@ -28,7 +28,7 @@ define([
             // vId(vendorId);
             $.ajax({
                 data: { vendorId: vId},
-                url:"http://localhost/codilarTask/mage3/rest/V2/Vendor/getProducts",
+                url:"http://localhost/codilarTask/mage3/rest/V2/Product/getProducts",
                 method:"GET",
                 success:function(response) {
                     _Products(response);
@@ -40,6 +40,7 @@ define([
        },
 
        getName: function(){
+           console.log("vendor Name: "+ _vName());
             return _vName();
        },
 

@@ -24,6 +24,7 @@ define([
 
 
       initialize: function() {
+        console.log("inital pageNumber: "+ this.pageNumber());
         this._super();
       },
       fetchVendors: function() {
@@ -39,23 +40,8 @@ define([
         productModel.setVendorName(vend.vendor);
         stepNavigator.setCurrentStep("product");
       },
-      hasPrev: function(){
-        console.log("inside next");
-        if(this.pageNumber == 1){
-          console.log("inside next if");
-          return false;
-        } else{
-          return true;
-        }
-      },
-      hasNext: function(){
-        console.log("inside next");
-        if(this.pageNumber == totalPages){
-          return false;
-        } else{
-          return true;
-        }
-      },
+
+
       next: function() {
         if (this.pageNumber() < totalPages) {
           this.pageNumber(this.pageNumber() + 1);

@@ -24,6 +24,7 @@ define([
         },
 
         setNumber: function(page){
+            console.log("setting page: " + page());
             _pNum(page());
             this.fetchVendors(2,_pNum());
         },

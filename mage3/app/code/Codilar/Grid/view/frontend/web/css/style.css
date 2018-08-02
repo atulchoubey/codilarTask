@@ -1,5 +1,5 @@
-.vendor-section #search{
-  width: 30%;
+.pager{
+  text-align: center;
 }
 .vendor {
   width: 100%;
@@ -24,6 +24,3 @@
   width: 70%;
   height: 200px;
 }
-.pager{
-  text-align: center;
- }
